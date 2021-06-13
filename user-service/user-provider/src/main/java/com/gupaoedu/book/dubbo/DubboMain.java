@@ -15,11 +15,13 @@ import java.io.IOException;
  */
 public class DubboMain {
     public static void main(String[] args) throws IOException {
-        ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("classpath*:/META-INF/user-provider.xml");
-        context.start();
-        Compiler compiler=ExtensionLoader.getExtensionLoader(Compiler.class).getAdaptiveExtension();
-        System.out.println(compiler.getClass());
-        System.in.read(); //阻塞Main线程
+        //第一种方式
+//        ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("classpath*:/META-INF/spring/user-provider.xml");
+//        context.start();
+//        Compiler compiler=ExtensionLoader.getExtensionLoader(Compiler.class).getAdaptiveExtension();
+//        System.out.println(compiler.getClass());
+//        System.in.read(); //阻塞Main线程
+        //第二种方式
        Main.main(args);
     }
 }
